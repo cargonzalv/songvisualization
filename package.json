@@ -1,0 +1,23 @@
+{
+  "name": "songvisualization",
+  "version": "1.0.0",
+  "description": "Song visualization in three js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cegonzalv/songvisualization.git"
+  },
+  "author": "Carlos Gonzalez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cegonzalv/songvisualization/issues"
+  },
+  "homepage": "https://github.com/cegonzalv/songvisualization#readme",
+  "dependencies": {
+    "three": "^0.92.0"
+  }
+}
