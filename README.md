@@ -1,6 +1,6 @@
 # SongVisualization
 
-Based of Raathigesh's[http://raathigesh.com] tutorial: http://raathigesh.com/Audio-Visualization-with-Web-Audio-and-ThreeJS/
+Based of [Raathigesh's](http://raathigesh.com) tutorial: http://raathigesh.com/Audio-Visualization-with-Web-Audio-and-ThreeJS/
 
 Esquema de Colores: 
 
