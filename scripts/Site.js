@@ -93,13 +93,14 @@ AudioVisualizer.prototype.createBars = function () {
 
         //create a material
         var material = new THREE.MeshPhongMaterial({
-            color: this.getRandomColor(),
+            color: this.getRandomSoftColor(),
             ambient: 0x808080,
             specular: 0xffffff
         });
 
         //create the geometry and set the initial position
         this.bars[i] = new THREE.Mesh(barGeometry, material);
+        this.bars[i].colorType = "soft";
         this.bars[i].position.set(i - this.numberOfBars/2, 0, 0);
 
         //add the created bar to the scene
@@ -152,20 +153,27 @@ AudioVisualizer.prototype.setupAudioProcessing = function () {
             var value = array[i * step] / 4;
             value = value < 1 ? 1 : value;
             visualizer.bars[i].scale.z = value;
+            let color = value > 25 ? that.getRandomIntenseColor() : that.getRandomSoftColor();
+            let type = value > 25? "intense" : "soft";
+            if(type != visualizer.bars[i].colorType){
+                visualizer.bars[i].material.color.setHex("0x" + color.split("#")[1]);
+                visualizer.bars[i].colorType = type
+            }
         }
-    }
 
-};
+    };
+}
 
 //get the default audio from the server
 AudioVisualizer.prototype.getAudio = function () {
     var request = new XMLHttpRequest();
-    request.open("GET", "Asset/Aathi-StarMusiQ.Com.mp3", true);
+    request.open("GET", "https://raw.githubusercontent.com/cegonzalv/songvisualization/master/swan-lake.mp3", true);
     request.responseType = "arraybuffer";
     request.send();
     var that = this;
     request.onload = function () {
-        //that.start(request.response);
+        that.start(request.response);
+        $("#guide").text("Reproduciendo: Swan Lake");
     }
 };
 
@@ -185,12 +193,17 @@ AudioVisualizer.prototype.start = function (buffer) {
 };
 
 //util method to get random colors to make stuff interesting
-AudioVisualizer.prototype.getRandomColor = function () {
-    var letters = '0123456789ABCDEF'.split('');
+AudioVisualizer.prototype.getRandomSoftColor = function () {
+    var letters = ["4095ae","d1ffcc","ffd7a5","cccccc","ffe2df"]
     var color = '#';
-    for (var i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * 16)];
-    }
+    color += letters[Math.floor(Math.random() * 5)];
+    return color;
+};
+//util method to get random colors to make stuff interesting
+AudioVisualizer.prototype.getRandomIntenseColor = function () {
+    var letters = ["fd8a5e","f87d99","db6143","ffc400","d11919"]
+    var color = '#';
+    color += letters[Math.floor(Math.random() * 5)];
     return color;
 };
 
@@ -222,7 +235,7 @@ AudioVisualizer.prototype.handleDrop = function () {
         var file = e.dataTransfer.files[0];
         var fileName = file.name;
 
-        $("#guide").text("Playing " + fileName);
+        $("#guide").text("Reproduciendo: " + fileName);
 
         var fileReader = new FileReader();
 
