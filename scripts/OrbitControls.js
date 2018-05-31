@@ -52,7 +52,7 @@ THREE.OrbitControls = function ( object, domElement ) {
 	var zoomEnd = new THREE.Vector2();
 	var zoomDelta = new THREE.Vector2();
 
-	var phiDelta = 0;
+	var phiDelta = 1;
 	var thetaDelta = 0;
 	var scale = 1;
 
