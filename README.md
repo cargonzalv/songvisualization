@@ -17,3 +17,6 @@ Esquema de Colores:
 	- ![#db6143](https://placehold.it/15/db6143/000000?text=+) `#db6143`
 	- ![#ffc400](https://placehold.it/15/ffc400/000000?text=+) `#ffc400` 
 	- ![#d11919](https://placehold.it/15/d11919/000000?text=+) `#d11919`
+
+Con el mouse es posible mover la cámara y ver distintos ángulos.
+Se separó en colores intensos y serenos dependiendo de la intensidad de la barra actual. Esto marca lo explicado en el blog de la variedad entre calma y agresividad que se muestra en la obra.
