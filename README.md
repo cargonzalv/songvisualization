@@ -5,7 +5,7 @@ Based of [Raathigesh's](http://raathigesh.com) tutorial: http://raathigesh.com/A
 Esquema de Colores: 
 
 - Suaves: 
-	- [#4095ae](https://placehold.it/15/4095ae/000000?text=+) `#4095ae`
+[#4095ae](https://placehold.it/15/4095ae/000000?text=+) `#4095ae`
 	- [#d1ffcc](https://placehold.it/15/d1ffcc/000000?text=+) `#d1ffcc`
 	- [#ffd7a5](https://placehold.it/15/ffd7a5/000000?text=+) `#ffd7a5`
 	- [#cccccc](https://placehold.it/15/cccccc/000000?text=+) `#cccccc`
